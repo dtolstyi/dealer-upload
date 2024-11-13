@@ -213,7 +213,7 @@
                 const { data, error } = await supabaseClient
                     .storage
                     .from('images')
-                    .upload(`deals/${Date.now()}_${file.name}`, file);
+                    .upload(`deals/${Date.now()}`, file);
                 if (error) throw error;
 
                 const publicUrl = supabaseClient
