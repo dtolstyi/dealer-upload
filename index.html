@@ -103,6 +103,12 @@
                     <input type="number" class="form-control" id="resultingPrice" name="resultingPrice" step="0.01" readonly>
                 </div>
             </div>
+            
+            <!-- URL -->
+            <div class="mb-3">
+                <label for="url" class="form-label">URL</label>
+                <input type="text" class="form-control" id="url" name="url" required>
+            </div>
 
             <!-- Single Image -->
             <div class="mb-3">
@@ -234,6 +240,7 @@
                     discount: parseFloat(formData.get('discount')) || 0,
                     resulting_price: parseFloat(formData.get('resultingPrice')) || 0,
                     image_url: imageUrl,
+                    url: formData.get('url'),
                     is_hot: isHot // Store the switch value
                 });
 
