@@ -174,7 +174,7 @@
         const title = document.getElementById('title').value.trim();
         const description = document.getElementById('description').value.trim();
         const image = document.getElementById('image').files.length > 0;
-        const resultingPrice = parseFloat(document.getElementById('resultingPrice').value) > 0;
+        const resultingPrice = parseFloat(document.getElementById('resultingPrice').value) >= 0;
 
         if (!title || !description || !image || !resultingPrice) {
             alert('Please fill in all required fields: Title, Description, Image, and Resulting Price.');
