@@ -113,27 +113,27 @@
                         </div>
                     </div>
 
-                    <!-- Original Price, Discount, Resulting Price (on the same line) -->
-                    <div class="mb-3 row">
-                        <div class="col">
-                            <label for="originalPrice" class="form-label">Original Price ($)</label>
-                            <input type="number" class="form-control" id="originalPrice" name="originalPrice" step="0.01" required>
-                        </div>
-                        <div class="col">
-                            <label for="discount" class="form-label">Discount (%)</label>
-                            <input type="number" class="form-control" id="discount" name="discount" min="0" max="100" step="1" required>
-                        </div>
-                        <div class="col">
-                            <label for="resultingPrice" class="form-label">Resulting Price ($)</label>
-                            <input type="number" class="form-control" id="resultingPrice" name="resultingPrice" step="0.01" readonly>
-                        </div>
-                    </div>
-                    
-                    <!-- URL -->
-                    <div class="mb-3">
-                        <label for="url" class="form-label">URL</label>
-                        <input type="text" class="form-control" id="url" name="url" required>
-                    </div>
+            <!-- Original Price, Discount, Resulting Price (on the same line) -->
+            <div class="mb-3 row">
+                <div class="col">
+                    <label for="originalPrice" class="form-label">Original Price ($)</label>
+                    <input type="number" class="form-control" id="originalPrice" name="originalPrice" step="0.01">
+                </div>
+                <div class="col">
+                    <label for="discount" class="form-label">Discount (%)</label>
+                    <input type="number" class="form-control" id="discount" name="discount" min="0" max="100" step="1">
+                </div>
+                <div class="col">
+                    <label for="resultingPrice" class="form-label">Resulting Price ($)</label>
+                    <input type="number" class="form-control" id="resultingPrice" name="resultingPrice" step="0.01">
+                </div>
+            </div>
+            
+            <!-- URL -->
+            <div class="mb-3">
+                <label for="url" class="form-label">URL</label>
+                <input type="text" class="form-control" id="url" name="url" required>
+            </div>
 
                     <!-- Single Image -->
                     <div class="mb-3" id="image-container">
@@ -244,7 +244,7 @@
         const title = document.getElementById('title').value.trim();
         const description = document.getElementById('description').value.trim();
         const image = !!editingId || document.getElementById('image').files.length > 0;
-        const resultingPrice = parseFloat(document.getElementById('resultingPrice').value) > 0;
+        const resultingPrice = parseFloat(document.getElementById('resultingPrice').value) >= 0;
 
         if (!title || !description || !image || !resultingPrice) {
             alert('Please fill in all required fields: Title, Description, Image, and Resulting Price.');
